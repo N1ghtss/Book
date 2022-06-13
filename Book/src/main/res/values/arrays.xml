@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="colorname">
+        <item>红色</item>
+        <item>黑色</item>
+        <item>蓝色</item>
+    </string-array>
+    <string-array name="colorvalue">
+        <item>#FF0000</item>
+        <item>#000000</item>
+        <item>#2D3092</item>
+    </string-array>
+</resources>

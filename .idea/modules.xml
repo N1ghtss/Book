@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Book.iml" filepath="$PROJECT_DIR$/.idea/modules/Book.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Book.Book.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Book.Book.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Book/Book.Book.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/Book/Book.Book.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Book/Book.Book.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Book/Book.Book.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Book/Book.Book.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/Book/Book.Book.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Chat/Book.Chat.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Chat/Book.Chat.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Chat/Book.ChatServer.iml" filepath="$PROJECT_DIR$/.idea/modules/Chat/Book.ChatServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ChatServer/Book.ChatServer.main.iml" filepath="$PROJECT_DIR$/.idea/modules/ChatServer/Book.ChatServer.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ChatServer/Book.ChatServer.test.iml" filepath="$PROJECT_DIR$/.idea/modules/ChatServer/Book.ChatServer.test.iml" />
+    </modules>
+  </component>
+</project>
