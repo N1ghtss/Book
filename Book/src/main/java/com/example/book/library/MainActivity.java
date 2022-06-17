@@ -22,6 +22,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.book.ActivityCollector;
 import com.example.book.R;
+import com.example.book.sqlserver.sqlquery;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,8 +43,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button btn0 = findViewById(R.id.btn0);
         Button btn2 = findViewById(R.id.btn2);
         Button btn3 = findViewById(R.id.btn3);
-        Button back = findViewById(R.id.back);
-        back.setOnClickListener(v -> finish());
+        Button back = findViewById(R.id.sqlquery);
+        back.setOnClickListener(new sqlquery(this));
         btn0.setOnClickListener(new EventListener(this));
         btn2.setOnClickListener(this);
         change();

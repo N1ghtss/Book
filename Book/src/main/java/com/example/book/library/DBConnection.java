@@ -16,8 +16,6 @@ public class DBConnection extends SQLiteOpenHelper {
             db.execSQL(sql);
         } catch (Exception e) {
             e.printStackTrace();
-        } finally {
-            db.close();
         }
 
 

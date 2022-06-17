@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Server {
-    //用数组创建三个端口 用于监听
-    private static final int[] PORTS = {6500, 6501, 6502};
+    //用数组创建四个端口 用于监听
+    private static final int[] PORTS = {6500, 6501, 6502, 6503};
     static List<Socket> study = new ArrayList<>();
     static List<Socket> life = new ArrayList<>();
     static List<Socket> play = new ArrayList<>();

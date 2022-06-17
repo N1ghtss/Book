@@ -1,0 +1,4 @@
+# 项目排除路径
+/.gradle/
+/ChatServer/out/
+/ChatServer/out/production/classes/

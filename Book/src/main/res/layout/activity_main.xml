@@ -96,7 +96,7 @@
             android:id="@+id/query"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="查询">
+            android:text="本地查询">
 
         </Button>
 
@@ -109,10 +109,10 @@
         </Button>
 
         <Button
-            android:id="@+id/back"
+            android:id="@+id/sqlquery"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="返回">
+            android:text="数据库查询">
 
         </Button>
     </LinearLayout>
