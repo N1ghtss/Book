@@ -11,13 +11,11 @@ public class DBConnection extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        try {
+        try (db) {
             String sql = "create table book(id varchar(30) primary key,name varchar(30)not null,author varchar(30) not null, location varchar(30) not null)";
             db.execSQL(sql);
         } catch (Exception e) {
             e.printStackTrace();
-        } finally {
-            db.close();
         }
 
 
