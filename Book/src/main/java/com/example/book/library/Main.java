@@ -8,7 +8,6 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.book.ActivityCollector;
 import com.example.book.R;
 import com.example.book.chat.Life;
 import com.example.book.chat.Play;
@@ -29,7 +28,6 @@ public class Main extends AppCompatActivity implements View.OnClickListener {
         btn3.setOnClickListener(this);
         btn4.setOnClickListener(this);
         btn5.setOnClickListener(this);
-        ActivityCollector.addActivity(this);
 
 
     }

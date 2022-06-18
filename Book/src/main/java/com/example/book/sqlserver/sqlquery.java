@@ -1,7 +1,13 @@
 package com.example.book.sqlserver;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.view.View;
+import android.widget.EditText;
+
+import com.example.book.R;
+import com.example.book.library.Add;
+import com.example.book.library.MainActivity;
 
 public class sqlquery implements View.OnClickListener {
     Activity a;
@@ -10,7 +16,38 @@ public class sqlquery implements View.OnClickListener {
         this.a = a;
     }
 
+    @SuppressLint("NonConstantResourceId")
     public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.addsql: {
+                String id = ((EditText) a.findViewById(R.id.num)).getText().toString();
+                String name = ((EditText) a.findViewById(R.id.name)).getText().toString();
+                String author = ((EditText) a.findViewById(R.id.author)).getText().toString();
+                String location = ((EditText) a.findViewById(R.id.location)).getText().toString();
+                String data = "insert++++" + id + "++++" + name + "++++" + author + "++++" + location;
+                sqlThread sql = new sqlThread(((Add) a).handler, data);
+                sql.start();
+                break;
+            }
+            case R.id.sqlquery: {
+                String id = ((EditText) a.findViewById(R.id.num)).getText().toString();
+                String name = ((EditText) a.findViewById(R.id.name)).getText().toString();
+                String author = ((EditText) a.findViewById(R.id.author)).getText().toString();
+                String sql = "where 1=1 ";
+                if (!id.equals("")) {
+                    sql += "and id like '%" + id + "%'";
+                }
+                if (!name.equals("")) {
+                    sql += "and name like '%" + name + "%'";
+                }
+                if (!author.equals("")) {
+                    sql += "and author like '%" + author + "%'";
+                }
+                ((MainActivity) a).gotoserver("search++++" + sql);
+                break;
+            }
 
+
+        }
     }
 }

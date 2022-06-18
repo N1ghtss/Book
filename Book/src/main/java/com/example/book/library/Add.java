@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,14 +15,28 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.book.R;
+import com.example.book.sqlserver.sqlquery;
 
 public class Add extends AppCompatActivity implements View.OnClickListener {
+    public Handler handler = new Handler(msg -> {
+        String message = msg.getData().getString("read");
+        if (Boolean.parseBoolean(message)) {
+            Toast.makeText(this, "操作成功", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "操作失败", Toast.LENGTH_SHORT).show();
+        }
+
+        return true;
+    });
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add);
         Button add = findViewById(R.id.query);
         add.setOnClickListener(this);
+        Button sqlbtn = findViewById(R.id.addsql);
+        sqlbtn.setOnClickListener(new sqlquery(this));
     }
 
     @SuppressLint("Range")
@@ -61,12 +76,6 @@ public class Add extends AppCompatActivity implements View.OnClickListener {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-//        ContentValues c=new ContentValues();
-//        c.put("name",bn);
-//        c.put("id",bnum);
-//        c.put("author",bauthor);
-//        c.put("location",blocation);
-//        db.getWritableDatabase().insert("book",null,c);
 
         Intent i = new Intent(this, information.class);
         i.putExtra("bookname", bn);

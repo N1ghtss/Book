@@ -90,5 +90,13 @@
         android:text="新增">
 
     </Button>
+    <Button
+        android:id="@+id/addsql"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="新增到远程数据库">
+
+    </Button>
 
 </LinearLayout>

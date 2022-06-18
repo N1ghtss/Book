@@ -6,7 +6,9 @@ import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -20,8 +22,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.book.ActivityCollector;
 import com.example.book.R;
+import com.example.book.sqlserver.Book;
+import com.example.book.sqlserver.sqlThread;
 import com.example.book.sqlserver.sqlquery;
 
 import java.util.ArrayList;
@@ -29,13 +32,70 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     TableRow del_tr;
+    TableLayout table;
+    boolean sqlquery = false;
     boolean Clickquery = false;
+    public Handler handler = new Handler(msg -> {
+        String message = msg.getData().getString("read");
+        Log.e("result", message);
+        if (message.equals("true")) {
+            Toast.makeText(this, "操作成功", Toast.LENGTH_LONG).show();
+            gotoserver("search++++     ");
+        } else if (message.equals("false")) {
+            Toast.makeText(this, "操作失败", Toast.LENGTH_LONG).show();
+        } else {
+            List<Book> list = new ArrayList<>();
+            String[] str = message.split("\\+\\+\\+\\+");
+            for (String s : str) {
+                String[] datas = s.split("\\+\\+\\+");
+                list.add(new Book(datas[0], datas[1], datas[2], datas[3]));
+            }
+            show(list);
+
+        }
+        return true;
+    }
+    );
+
+    @SuppressLint("SetTextI18n")
+    private void show(List<Book> list) {
+        table = findViewById(R.id.table);
+        for (int i = 1; i < table.getChildCount() - 1; ) {
+            table.removeViewAt(i);
+        }
+        for (Book book : list) {
+            TableRow row = new TableRow(this);
+            TextView tv1 = new TextView(this);
+            tv1.setText(book.getId());
+            row.addView(tv1);
+            TextView tv2 = new TextView(this);
+            tv2.setText(book.getName());
+            row.addView(tv2);
+            TextView tv3 = new TextView(this);
+            tv3.setText(book.getAuthor());
+            row.addView(tv3);
+            TextView tv4 = new TextView(this);
+            tv4.setText(book.getLocation());
+            row.addView(tv4);
+            table.addView(row, table.getChildCount() - 1);
+            registerForContextMenu(row);
+        }
+        TextView tv = findViewById(R.id.total);
+        tv.setText("共" + list.size() + "条数据");
+        sqlquery = true;
+        Clickquery = false;
+    }
+
+    public void gotoserver(String s) {
+        Log.e("sql", s);
+        sqlThread thread = new sqlThread(handler, s);
+        thread.start();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ActivityCollector.addActivity(this);
         TableRow tr = findViewById(R.id.data_row);
         registerForContextMenu(tr);
         Button query = findViewById(R.id.query);
@@ -160,7 +220,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(i);
                 break;
             case 3:
-                ActivityCollector.finishALL();
                 break;
             case 4:
                 change();
@@ -195,13 +254,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(i);
                 break;
             case 2:
-                TextView del_id = (TextView) del_tr.getChildAt(0);
-                String id = del_id.getText().toString();
-                DBConnection db = new DBConnection(this);
-                String sql = "delete from book where id='" + id + "' ";
-                db.getWritableDatabase().execSQL(sql);
-                Toast.makeText(this, "删除", Toast.LENGTH_LONG).show();
-                myquery(null, null);
+                String id = ((TextView) del_tr.getChildAt(0)).getText().toString();
+                if (Clickquery) {
+                    DBConnection db = new DBConnection(this);
+                    String sql = "delete from book where id='" + id + "' ";
+                    db.getWritableDatabase().execSQL(sql);
+                    Toast.makeText(this, "删除", Toast.LENGTH_LONG).show();
+                    myquery(null, null);
+                } else if (sqlquery) {
+                    String sql = "delete++++" + id;
+                    gotoserver(sql);
+                }
                 break;
         }
         return true;
@@ -240,6 +303,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             TextView total = findViewById(R.id.total);
             total.setText("共" + (table.getChildCount() - 2) + "条数据");
             Clickquery = true;
+            sqlquery = false;
 
         } catch (Exception e) {
             e.printStackTrace();
