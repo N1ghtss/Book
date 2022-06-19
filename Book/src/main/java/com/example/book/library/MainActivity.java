@@ -8,7 +8,6 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
-import android.util.Log;
 import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -37,7 +36,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     boolean Clickquery = false;
     public Handler handler = new Handler(msg -> {
         String message = msg.getData().getString("read");
-        Log.e("result", message);
         if (message.equals("true")) {
             Toast.makeText(this, "操作成功", Toast.LENGTH_LONG).show();
             gotoserver("search++++     ");
@@ -87,7 +85,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void gotoserver(String s) {
-        Log.e("sql", s);
         sqlThread thread = new sqlThread(handler, s);
         thread.start();
     }
@@ -251,6 +248,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 i.putExtra("name", modify_name.getText().toString());
                 i.putExtra("author", modify_author.getText().toString());
                 i.putExtra("location", modify_location.getText().toString());
+                i.putExtra("sqlquery", sqlquery);
                 startActivity(i);
                 break;
             case 2:
@@ -316,6 +314,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onRestart();
         if (Clickquery) {
             myquery(null, null);
+        }
+        if (sqlquery) {
+            gotoserver("search++++     ");
         }
 //        change();
 

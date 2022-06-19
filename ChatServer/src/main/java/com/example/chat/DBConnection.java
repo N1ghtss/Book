@@ -41,7 +41,7 @@ public class DBConnection {
 
     public boolean update(String[] args) {
         try {
-            String sql = "update book set id=?,name=?,author=?,location=? where id=?";
+            String sql = "update books set id=?,name=?,author=?,location=? where id=?";
             java.sql.PreparedStatement pst = conn.prepareStatement(sql);
             pst.setString(1, args[1]);
             pst.setString(2, args[2]);
