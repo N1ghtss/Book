@@ -46,7 +46,6 @@ public class modify extends AppCompatActivity implements View.OnClickListener {
         author.setText(i.getStringExtra("author"));
         location.setText(i.getStringExtra("location"));
         sqlquery = i.getBooleanExtra("sqlquery", false);
-///        Toast.makeText(this, sqlquery, Toast.LENGTH_SHORT).show();
         Button modify = findViewById(R.id.modify);
         modify.setOnClickListener(this);
     }

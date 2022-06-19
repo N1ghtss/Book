@@ -201,8 +201,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         menu.add(0, 1, 0, "关于");
         menu.add(0, 2, 0, "设置");
-        menu.add(0, 3, 0, "退出");
-        menu.add(0, 4, 0, "应用字体设置");
+        menu.add(0, 3, 0, "应用字体设置");
         return true;
     }
 
@@ -217,8 +216,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(i);
                 break;
             case 3:
-                break;
-            case 4:
                 change();
                 break;
         }
@@ -238,7 +235,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public boolean onContextItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case 1:
-                Toast.makeText(this, "修改", Toast.LENGTH_LONG).show();
                 Intent i = new Intent(this, modify.class);
                 TextView modify_id = (TextView) del_tr.getChildAt(0);
                 TextView modify_name = (TextView) del_tr.getChildAt(1);

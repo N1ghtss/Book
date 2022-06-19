@@ -2,12 +2,14 @@ package com.example.book.sqlserver;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.View;
 import android.widget.EditText;
 
 import com.example.book.R;
 import com.example.book.library.Add;
 import com.example.book.library.MainActivity;
+import com.example.book.library.information;
 
 public class sqlquery implements View.OnClickListener {
     Activity a;
@@ -27,6 +29,16 @@ public class sqlquery implements View.OnClickListener {
                 String data = "insert++++" + id + "++++" + name + "++++" + author + "++++" + location;
                 sqlThread sql = new sqlThread(((Add) a).handler, data);
                 sql.start();
+                if (id.equals("")) {
+                    return;
+                }
+                Intent i = new Intent(a, information.class);
+                i.putExtra("bookname", name);
+                i.putExtra("booknum", id);
+                i.putExtra("bookauthor", author);
+                i.putExtra("booklocation", location);
+                a.startActivity(i);
+                a.finish();
                 break;
             }
             case R.id.sqlquery: {
