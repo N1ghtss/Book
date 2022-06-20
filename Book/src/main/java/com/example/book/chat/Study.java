@@ -23,7 +23,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class Study extends AppCompatActivity implements View.OnClickListener {
-    private final com.example.book.chat.changetext changetext = new changetext();
     public String username;
     public TextView record;
     public ClientThread c;
@@ -46,7 +45,7 @@ public class Study extends AppCompatActivity implements View.OnClickListener {
                 startActivity(new Intent(this, Set1.class));
                 break;
             case 2:
-                changetext.change(this, record);
+                com.example.book.chat.changetext.change(this, record);
                 break;
             case 3:
                 record.setText("");

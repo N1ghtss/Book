@@ -4,4 +4,7 @@
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
+    <color name="tv_gray_deep">#818181</color>
+    <color name="orange_light">#ffd39b</color>
+    <color name="top_bar_normal_bg">#ecbb89</color>
 </resources>

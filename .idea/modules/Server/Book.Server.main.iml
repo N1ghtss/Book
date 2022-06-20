@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module external.linked.project.id=":ChatServer:main" external.linked.project.path="$MODULE_DIR$/../../../ChatServer" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="Book" external.system.module.type="sourceSet" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+<module external.linked.project.id=":Server:main" external.linked.project.path="$MODULE_DIR$/../../../Server" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="Book" external.system.module.type="sourceSet" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager">
     <output url="file://$MODULE_DIR$/../../../Server/out/production/classes" />
     <exclude-output />
@@ -11,7 +11,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../ChatServer/libs/mssql-jdbc-9.4.1.jre11.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../Server/libs/mssql-jdbc-9.4.1.jre11.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
