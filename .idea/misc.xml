@@ -3,11 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/work/Book/Book/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/work/Book/Book/src/main/res/drawable/button_bg.xml" value="0.1" />
+        <entry key="..\:/work/Book/Book/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/work/Book/Book/src/main/res/drawable/icon_login_account.xml" value="0.1" />
         <entry key="..\:/work/Book/Book/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/work/Book/Book/src/main/res/layout/add.xml" value="0.39427083333333335" />
         <entry key="..\:/work/Book/Book/src/main/res/layout/chat.xml" value="0.25" />
         <entry key="..\:/work/Book/Book/src/main/res/layout/information.xml" value="0.33541666666666664" />
         <entry key="..\:/work/Book/Book/src/main/res/layout/life.xml" value="0.3416666666666667" />
+        <entry key="..\:/work/Book/Book/src/main/res/layout/login.xml" value="0.33" />
         <entry key="..\:/work/Book/Book/src/main/res/layout/main.xml" value="0.1" />
         <entry key="..\:/work/Book/Book/src/main/res/layout/play.xml" value="0.3416666666666667" />
         <entry key="..\:/work/Book/Book/src/main/res/xml/set.xml" value="0.33645833333333336" />

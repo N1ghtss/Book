@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Book">
         <activity
-            android:name=".library.Main"
+            android:name=".Login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,6 +25,8 @@
         <activity android:name=".library.information" />
         <activity android:name=".library.Set1" />
         <activity android:name=".library.modify" />
+        <activity android:name=".library.Main" />
+        <!--        <activity android:name=".Login" />-->
         <activity
             android:name=".chat.Study"
             android:label="学习聊天室" />
@@ -34,6 +36,7 @@
         <activity
             android:name=".chat.Play"
             android:label="娱乐聊天室" />
+
     </application>
 
 
