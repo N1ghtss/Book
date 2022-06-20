@@ -14,7 +14,6 @@ public class DBConnection extends SQLiteOpenHelper {
         try {
             String sql = "create table book(id varchar(30) primary key,name varchar(30)not null,author varchar(30) not null, location varchar(30) not null)";
             db.execSQL(sql);
-            db.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -26,4 +25,6 @@ public class DBConnection extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
     }
+
+
 }

@@ -37,7 +37,6 @@ public class ClientThread extends Thread {
                 Message message = new Message();
                 message.setData(b);
                 handler.sendMessage(message);
-
             }
         } catch (Exception e) {
             e.printStackTrace();

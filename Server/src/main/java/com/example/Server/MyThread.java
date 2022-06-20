@@ -1,4 +1,4 @@
-package com.example.chat;
+package com.example.Server;
 
 import java.io.IOException;
 import java.io.InputStream;

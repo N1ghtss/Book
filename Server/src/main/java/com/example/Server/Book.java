@@ -1,4 +1,4 @@
-package com.example.chat;
+package com.example.Server;
 
 public class Book {
     public String id;

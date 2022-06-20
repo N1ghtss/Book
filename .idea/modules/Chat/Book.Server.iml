@@ -15,13 +15,13 @@
     </facet>
   </component>
   <component name="NewModuleRootManager">
-    <output url="file://$MODULE_DIR$/../../../ChatServer/build/classes/java/main" />
-    <output-test url="file://$MODULE_DIR$/../../../ChatServer/build/classes/java/test" />
+    <output url="file://$MODULE_DIR$/../../../Server/build/classes/java/main" />
+    <output-test url="file://$MODULE_DIR$/../../../Server/build/classes/java/test" />
     <exclude-output />
-    <content url="file://$MODULE_DIR$/../../../ChatServer">
-      <excludeFolder url="file://$MODULE_DIR$/../../../ChatServer/.gradle" />
-      <excludeFolder url="file://$MODULE_DIR$/../../../ChatServer/build" />
-      <excludeFolder url="file://$MODULE_DIR$/../../../ChatServer/out" />
+    <content url="file://$MODULE_DIR$/../../../Server">
+      <excludeFolder url="file://$MODULE_DIR$/../../../Server/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../Server/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../Server/out" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

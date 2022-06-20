@@ -296,6 +296,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             cur.close();
             TextView total = findViewById(R.id.total);
             total.setText("共" + (table.getChildCount() - 2) + "条数据");
+            db.close();
             Clickquery = true;
             sqlquery = false;
 

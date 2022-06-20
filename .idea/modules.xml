@@ -8,9 +8,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Book/Book.Book.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Book/Book.Book.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Book/Book.Book.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/Book/Book.Book.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Chat/Book.Chat.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Chat/Book.Chat.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Chat/Book.ChatServer.iml" filepath="$PROJECT_DIR$/.idea/modules/Chat/Book.ChatServer.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ChatServer/Book.ChatServer.main.iml" filepath="$PROJECT_DIR$/.idea/modules/ChatServer/Book.ChatServer.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ChatServer/Book.ChatServer.test.iml" filepath="$PROJECT_DIR$/.idea/modules/ChatServer/Book.ChatServer.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Chat/Book.Server.iml" filepath="$PROJECT_DIR$/.idea/modules/Chat/Book.Server.iml" />
     </modules>
   </component>
 </project>
